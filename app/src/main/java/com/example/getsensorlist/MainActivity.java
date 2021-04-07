@@ -24,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mButton = findViewById(R.id.button);
+        mTxtSensors = findViewById(R.id.txtSensors);
+
+        sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTxtSensors = findViewById(R.id.txtSensors);
 
-                sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
 
                 sensorList = sensorMgr.getSensorList(Sensor.TYPE_ALL);
 
